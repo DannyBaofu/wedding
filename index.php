@@ -80,7 +80,7 @@
                     <p class="ww-couple-name ww-title aos-init aos-animate" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000">
                     <?php echo $user['groom']?> &amp; <?php echo $user['bride']?></p> 
                     <!--Home Showing Page-->
-                    <p class="h2 mt-5 ww-title aos-init aos-animate" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10"><?php echo $user['date']?><sup>th</sup></p> 
+                    <p class="h2 mt-5 ww-title aos-init aos-animate" data-aos="zoom-in-down" data-aos-delay="300" data-aos-duration="1000" data-aos-offset="10"><?php echo $user['date']?><sup>th</sup> ,  <?php echo $user['h']?>h:  <?php echo $user['m'] ?> m: <?php echo $user['s']?>s</p> 
                     <!--Time display-->
                 </div>
             </div>
@@ -133,7 +133,6 @@
               <li><i class="text-muted fas fa-map-marker-alt"></i><span class="pl-2 text-muted"><?php echo $event['address1'] ?></span></li>
               <li class="pt-2"><i class="text-muted far fa-calendar-alt"></i><span class="pl-2 "> The Event will be starting at : <?php echo $event['time_date'] ?></span></li>
               </ul>
-              <p><?php echo $event['description1'] ?></p>
           </div>
         </div>
 
@@ -363,6 +362,36 @@
     <?php endforeach; ?>
     <?php endif; ?>
 </div>
+
+
+<script>
+var countDownDate = <?php echo strtotime("$date $h:$m:$s" ) ?> * 1000;
+var now = <?php echo time() ?> * 1000;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+now = now + 1000;
+// Find the distance between now an the count down date
+var distance = countDownDate - now;
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// Output the result in an element with id="demo"
+document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
+minutes + "m " + seconds + "s ";
+// If the count down is over, write some text 
+if (distance < 0) {
+clearInterval(x);
+ document.getElementById("demo").innerHTML = "EXPIRED";
+}
+    
+}, 1000);
+
+    </script>
+
 
 
 <?php

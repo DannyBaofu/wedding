@@ -5,6 +5,8 @@ function get_content() {
 require_once '../controllers/connection.php';
 
 ?>
+
+
 <form method="POST" class="mx-auto py-5" action="/controllers/update_data/update_profile.php" enctype="multipart/form-data">
 <input type="hidden" name="product_id" value="<?php echo $_GET['id'] ?>">
 <div class="container">
@@ -50,6 +52,24 @@ require_once '../controllers/connection.php';
   <div>
   <input id="textinput" name="date" type="date" placeholder="Wedding date " class="form-control input-md">
     
+  </div>
+</div>
+<div class="form-group mt-4">
+  <label class="col-md-4 control-label" for="textinput">Wedding Time hour</label>  
+  <div>
+  <input id="textinput" name="h" type="number" placeholder="hour " class="form-control input-md">
+  </div>
+</div>
+<div class="form-group mt-4">
+  <label class="col-md-4 control-label" for="textinput">Wedding Time minute</label>  
+  <div>
+  <input id="textinput" name="m" type="number" placeholder="minute " class="form-control input-md">
+  </div>
+</div>
+<div class="form-group mt-4">
+  <label class="col-md-4 control-label" for="textinput">Wedding Time second</label>  
+  <div>
+  <input id="textinput" name="s" type="number" placeholder="second " class="form-control input-md">
   </div>
 </div>
 <div class="form-group mt-4">

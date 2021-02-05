@@ -11,14 +11,20 @@ $cat_id = intval($_POST['category']);
 // die();
 
 //If the admin wants to update the image.
-if ($_FILES['image']['name'] != "") {
+if ($_FILES['image']['name'] != "" && $_FILES['image2']['name'] != "" && $_FILES['image3']['name'] != "" ) {
 	$img_name = $_FILES['image']['name'];
+	$img_name2 = $_FILES['image2']['name'];
+	$img_name3 = $_FILES['image3']['name'];
 	$img_path = "/assets/img/$img_name";
+	$img_path2 = "/assets/img/$img_name2";
+	$img_path3 = "/assets/img/$img_name3";
 	move_uploaded_file($_FILES['image']['tmp_name'], $_SERVER["DOCUMENT_ROOT"].$img_path);
+	move_uploaded_file($_FILES['image2']['tmp_name'], $_SERVER["DOCUMENT_ROOT"].$img_path2);
+	move_uploaded_file($_FILES['image3']['tmp_name'], $_SERVER["DOCUMENT_ROOT"].$img_path3);
 
-	$query = "UPDATE packages SET name = ?, price = ?, description = ?, img = ?, category = ? WHERE package_id = ?";
+	$query = "UPDATE packages SET name = ?, price = ?, description = ?, img = ?,img2 = ?,img3 = ?, category = ? WHERE package_id = ?";
 	$stmt = $cn->prepare($query);
-	$stmt->bind_param('ssssii', $name, $price, $description, $img_path, $cat_id, $id);
+	$stmt->bind_param('ssssssii', $name, $price, $description, $img_path,$img_path2,$img_path3, $cat_id, $id);
 	$stmt->execute();
 	$stmt->close();
 	$cn->close();

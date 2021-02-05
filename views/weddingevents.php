@@ -73,6 +73,7 @@ require_once '../controllers/connection.php';
 </form>
 </div>
 
+
 <?php  
 }
 	require_once 'partials/layout.php';

@@ -24,7 +24,33 @@ function get_content() {
 	<div class="row">
 		<div class="col-md-4 py-5 mx-auto">
 			<div class="card">
-				<img src="<?php echo $packages['img'] ?>" class="card-img-top">
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  				<ol class="carousel-indicators">
+  				  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+  				  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+  				  <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+  				</ol>
+  				<div class="carousel-inner">
+  				  <div class="carousel-item active">
+					<img src="<?php echo $packages['img'] ?>" class="card-img-top">
+  				  </div>
+  				  <div class="carousel-item">
+					<img src="<?php echo $packages['img2'] ?>" class="card-img-top">
+  				  </div>
+					<div class="carousel-item">
+					<img src="<?php echo $packages['img3'] ?>" class="card-img-top">
+  				  </div>
+  				</div>
+  				<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+  				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  				  <span class="visually-hidden">Previous</span>
+  				</a>
+  				<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+  				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  				  <span class="visually-hidden">Next</span>
+  				</a>
+			</div>
+				
 				<div class="card-body">
 					<h5 class="card-title"><?php echo $packages["name"] ?></h5>
 					<p class="card-text"><?php echo $packages['description'] ?></p>
@@ -61,8 +87,16 @@ function get_content() {
 											<input type="number" name="price" class="form-control" value="<?php echo $packages['price'] ?>">
 										</div>
 										<div class="mb-3">
-											<label>Image</label>
+											<label>Image1</label>
 											<input type="file" name="image" class="form-control" value="<?php echo $packages['img'] ?>">
+										</div>
+										<div class="mb-3">
+											<label>Image2</label>
+											<input type="file" name="image2" class="form-control" value="<?php echo $packages['img2'] ?>">
+										</div>
+										<div class="mb-3">
+											<label>Image3</label>
+											<input type="file" name="image3" class="form-control" value="<?php echo $packages['img3'] ?>">
 										</div>
 										<div class="mb-3">
 											<label>Category</label>
