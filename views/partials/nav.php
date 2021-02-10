@@ -14,6 +14,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link smooth-scroll" href="/">Home</a></li>
                     <?php if(isset($_SESSION["user_details"]) && $_SESSION["user_details"]["isAdmin"]): ?>
+                      <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/news_update.php">New Feeds!</a></li>
                       <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/transaction.php">User's Transactions</a></li>
                       <li  class="nav-item"><a class="nav-link smooth-scroll" href="/controllers/auth/logout.php">Logout</a></li>
                     <?php elseif(isset($_SESSION["user_details"]) && !$_SESSION["user_details"]["isAdmin"]): ?>
@@ -28,14 +29,16 @@
                     <?php endif; ?>
                       </a>
                       <li class="nav-item"><a class="nav-link smooth-scroll" href="#couple">Couple</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#people">People</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#rsvp">RSVP</a></li>
-                    <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">View Our Plans</a></li>
+                      <li class="nav-item"><a class="nav-link smooth-scroll" href="#events">Events</a></li>
+                      <li class="nav-item"><a class="nav-link smooth-scroll" href="#people">People</a></li>
+                      <li class="nav-item"><a class="nav-link smooth-scroll" href="#gallery">Gallery</a></li>
+                      <li class="nav-item"><a class="nav-link smooth-scroll" href="#rsvp">RSVP</a></li>
+                      <li class="nav-item"><a class="nav-link smooth-scroll" href="#contact">View Our Plans</a></li>
+                      <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/news_update.php">New Feeds!</a></li>
                       <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/my_transactions.php">My Transactions</a></li>
                       <li  class="nav-item"><a class="nav-link smooth-scroll" href="/controllers/auth/logout.php">Logout</a></li>
                       <?php else: ?>
+                        <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/news_update.php">New Feeds!</a></li>
                         <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/forms/register.php">Register</a></li>
                         <li  class="nav-item"><a class="nav-link smooth-scroll" href="/views/forms/login.php">Login</a></li>
                       <?php endif; ?>

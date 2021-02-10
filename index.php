@@ -7,7 +7,7 @@
     $stmt->execute();
     $result = $stmt->get_result();
     $categories = $result->fetch_all(MYSQLI_ASSOC);
-    // var_dump($categories);
+    
     $products_query = "SELECT * FROM products";
     $products_stmt = $cn->prepare($products_query);
     $products_stmt->execute();
@@ -71,7 +71,6 @@
 
 </head>
       <body id="top" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
-
 <div class="page-content">
     <div class="div">
         <div class="ww-home-page" id="home">
@@ -362,7 +361,6 @@
     <?php endforeach; ?>
     <?php endif; ?>
 </div>
-
 
 <script>
 var countDownDate = <?php echo strtotime("$date $h:$m:$s" ) ?> * 1000;
